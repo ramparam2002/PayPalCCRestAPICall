@@ -24,6 +24,7 @@ public class MainApplication {
     	//Step 2 - Generate Token
     	
     	String clientToken = payPalClient.generateClientToken(accessToken, customerId);
+    	System.out.println("Client Token : " + clientToken);
     	
     	
     	//Step 3 - Create Order
@@ -34,6 +35,7 @@ public class MainApplication {
     	Step3CreateOrder createOrderRequest = new Step3CreateOrder("CAPTURE", Arrays.asList(purchaseUnit),paymentSource);
     	
     	String orderID = payPalClient.createOrder(accessToken, createOrderRequest, uniqueRequestId);
+    	System.out.println("Order ID : " + orderID);
     	
    
     }
